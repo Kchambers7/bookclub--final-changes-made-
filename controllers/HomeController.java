@@ -40,7 +40,7 @@ public class HomeController {
 	public String index(Model model, HttpSession session) {
 		
 		System.out.println("*************** INDEX ************");
-		System.out.println("login en session: " + session.getAttribute("user_id"));
+		System.out.println("login in session: " + session.getAttribute("user_id"));
 		if (session.getAttribute("user_id") != null) { // If user is in session
 			return "redirect:/home"; // re-route to dashboard
 		}
@@ -76,9 +76,9 @@ public class HomeController {
 	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, Model model,
 			HttpSession session) {
 		System.out.println("*************** LOGIN ************");
-		// Añadir una vez implementado el servicio:
-		// User user = userServ.login(newLogin, result);
-
+		
+// Add once the service is implemented:
+// User user = userServ.login(newLogin, result);
 		User user = userService.login(newLogin, result);
 
 		if (result.hasErrors()) {
