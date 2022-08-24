@@ -1,7 +1,6 @@
 package com.codingdojo.mvc.controllers;
 
 import java.util.List;
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +38,7 @@ public class HomeController {
 	// ------------------- view -------------------
 	@GetMapping("/initial")
 	public String index(Model model, HttpSession session) {
-		// Enlazar objetos User y LoginUser vacíos al JSP
-		// para capturar la entrada del formulariocopy
+		
 		System.out.println("*************** INDEX ************");
 		System.out.println("login en session: " + session.getAttribute("user_id"));
 		if (session.getAttribute("user_id") != null) { // If user is in session
@@ -57,21 +55,16 @@ public class HomeController {
 	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model,
 			HttpSession session) {
 		System.out.println("*************** POST REGISTER ************");
-		// PARA HACER después: llamar a un método de registro en el servicio
-		// ¡para hacer algunas validaciones adicionales y crear un nuevo usuario!
+
 
 		userService.register(newUser, result);
 
 		if (result.hasErrors()) {
-			// Asegúrate de enviar el LoginUser vacío antes
-			// de volver a renderizar la página.
+		
 			model.addAttribute("newLogin", new LoginUser());
 			return "index";
 		}
 
-		// ¡Sin errores!
-		// PARA HACER después: Almacena sus ID de la base de datos en sesión,
-		// en otras palabras, inicia sus sesiones.
 		session.setAttribute("user_id", newUser.getId());
 		System.out.println("------------------ POST REGISTER --------------------");
 		return "redirect:/home";
@@ -93,14 +86,12 @@ public class HomeController {
 			return "index";
 		}
 
-		// ¡Sin errores!
-		// PARA HACER después: Almacena sus ID de la base de datos en sesión,
-		// en otras palabras, inicia sus sesiones.
+		
 		session.setAttribute("user_id", user.getId());
 		System.out.println("---------------- LOGIN ------------------");
 		return "redirect:/home";
 	}
-	// ////// HOME //////////////////////////////////////////////////////
+	// HOME 
 
 	@GetMapping("/home")
 	public String dashboard(Model model, HttpSession session) {
@@ -120,8 +111,7 @@ public class HomeController {
 			System.out.println("************** HOME *********** ");
 			return "home";
 		}
-	}
-	// ----------------------- logout ---------------------------
+	}// logout 
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		System.out.println("************** LOGOUT *********** ");
