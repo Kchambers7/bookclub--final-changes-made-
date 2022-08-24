@@ -23,16 +23,16 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotEmpty(message = "¡Se requiere titulo!")
-	@Size(min = 3, max = 30, message = "titulo debe tener entre 3 y 30 caracteres")
+	@NotEmpty(message = "Title required!")
+	@Size(min = 3, max = 30, message = " Title mus be between 3 and 30 characters")
 	private String title;
 
-	@NotEmpty(message = "¡Se requiere autor!")
-	@Size(min = 3, max = 30, message = "autor debe tener entre 3 y 30 caracteres")
+	@NotEmpty(message = "Autho required!")
+	@Size(min = 3, max = 30, message = "Author must be between 3 and 30 characters")
 	private String author;
 
-	@NotEmpty(message = "¡Se requiere su opinion!")
-	@Size(min = 3, max = 255, message = "opinion debe tener entre 3 y 255 caracteres")
+	@NotEmpty(message = "Thought required!")
+	@Size(min = 3, max = 255, message = "Thought must be between 3 and 30 characters")
 	private String thought;
 
 	@Column(updatable = false)
