@@ -1,4 +1,4 @@
-package com.codingdojo.mvc.models;
+package com.codingdojo.bookclub.models;
 
 import java.util.List;
 import javax.persistence.Entity;

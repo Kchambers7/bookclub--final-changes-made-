@@ -1,4 +1,4 @@
-package com.codingdojo.mvc.models;
+package com.codingdojo.bookclub.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

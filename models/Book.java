@@ -1,4 +1,4 @@
-package com.codingdojo.mvc.models;
+package com.codingdojo.bookclub.models;
 
 import java.util.Date;
 import javax.persistence.Column;

@@ -1,4 +1,4 @@
-package com.codingdojo.mvc.controllers;
+package com.codingdojo.bookclub.controllers;
 
 import java.util.List;
 import javax.servlet.http.HttpSession;
@@ -10,11 +10,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import com.codingdojo.mvc.models.Book;
-import com.codingdojo.mvc.models.LoginUser;
-import com.codingdojo.mvc.models.User;
-import com.codingdojo.mvc.services.BookService;
-import com.codingdojo.mvc.services.UserService;
+import com.codingdojo.bookclub.models.Book;
+import com.codingdojo.bookclub.models.LoginUser;
+import com.codingdojo.bookclub.models.User;
+import com.codingdojo.bookclub.services.BookService;
+import com.codingdojo.bookclub.services.UserService;
 
 @Controller
 public class HomeController {
