@@ -1,7 +1,6 @@
 package com.codingdojo.mvc.models;
 
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,21 +21,23 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotEmpty(message = "¡Se requiere Username!")
-	@Size(min = 3, max = 30, message = "Username debe tener entre 3 y 30 caracteres")
+	@NotEmpty(message = "Username required!")
+	@Size(min = 3, max = 30, message = "Username must be between 3 and 30 characters")
 	private String userName;
 
-	@NotEmpty(message = "¡Se requiere Email!")
-	@Email(message = "¡Ingrese un Email válido!")
+	@NotEmpty(message = "Email required!")
+	@Email(message = "Enter a valid email")
 	private String email;
 
-	@NotEmpty(message = "¡Se requiere contraseña!")
-	@Size(min = 8, max = 128, message = "La contraseña debe tener entre 8 y 128 caracteres")
+	@NotEmpty(message = "Password required!")
+    ")
+	@Size(min = 8, max = 128, message = "Password confirmation must be between 8 and 128 characters)
 	private String password;
 
 	@Transient
-	@NotEmpty(message = "Se requiere confirmar la contraseña!")
-	@Size(min = 8, max = 128, message = "La confirmacion de la contraseña debe tener entre 8 y 128 caracteres")
+	@NotEmpty(message = "Password confirmation required!"
+    Password confirmation required!)
+	@Size(min = 8, max = 128, message = " Password confirmation must be between 8 and 128 characters")
 	private String confirm;
 	
     @OneToMany(mappedBy="user", fetch = FetchType.LAZY)

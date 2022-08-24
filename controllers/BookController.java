@@ -76,7 +76,7 @@ public class BookController {
 	// //// EDIT BOOK /////////////
 	@GetMapping("/books/{id}/edit")
 	public String editView(@PathVariable("id") Long id,Model model) {
-		System.out.println("************** EDIT VIEW ***************");
+		System.out.println("****EDIT VIEW ****");
 		Book book = bookService.getBookById(id);
 		model.addAttribute("book", book);
 		return "editbook";
